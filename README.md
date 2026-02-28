@@ -1,8 +1,6 @@
-# FireRed-Image-Edit-1.0-Fast
+# **FireRed-Image-Edit-1.0-Fast**
 
 A Gradio-based web application for performing image editing tasks using the FireRed-Image-Edit-1.0 model with accelerated 4-step inference. Supports single and multi-image editing through natural language prompts.
-
----
 
 ## Table of Contents
 
@@ -24,13 +22,9 @@ A Gradio-based web application for performing image editing tasks using the Fire
 - [License](#license)
 - [Credits](#credits)
 
----
-
 ## Overview
 
 FireRed-Image-Edit-1.0-Fast is an image editing application that leverages the FireRed-Image-Edit-1.0 pipeline with a distilled transformer model for fast inference. Users provide one or more input images along with a natural language prompt describing the desired edit, and the system generates the modified output image. The default configuration uses only 4 inference steps, enabling rapid editing while maintaining quality.
-
----
 
 ## Features
 
@@ -44,8 +38,6 @@ FireRed-Image-Edit-1.0-Fast is an image editing application that leverages the F
 - **MCP Server Support** -- Launches with Model Context Protocol server enabled for programmatic access.
 - **Memory Management** -- Automatic garbage collection and CUDA cache clearing between inference calls.
 
----
-
 ## Model Details
 
 | Component | Source |
@@ -55,8 +47,6 @@ FireRed-Image-Edit-1.0-Fast is an image editing application that leverages the F
 | Architecture | QwenImageTransformer2DModel with FlowMatchEulerDiscreteScheduler |
 | Precision | bfloat16 |
 | Attention Processor | QwenDoubleStreamAttnProcessorFA3 (Flash Attention 3) |
-
----
 
 ## Requirements
 
@@ -91,8 +81,6 @@ Additional dependencies are required from the `qwenimage` module:
 - `transformer_qwenimage` -- Custom transformer model class
 - `qwen_fa3_processor` -- Flash Attention 3 processor class
 
----
-
 ## Installation
 
 ### Clone the Repository
@@ -126,8 +114,6 @@ python app.py
 
 The application will start and display a local URL (typically `http://127.0.0.1:7860`).
 
----
-
 ## Usage
 
 ### Basic Workflow
@@ -141,8 +127,6 @@ The application will start and display a local URL (typically `http://127.0.0.1:
 
 - **Images** -- Upload through the gallery component. Supports common image formats (JPEG, PNG, WebP, and others).
 - **Prompt** -- A text description of the desired modification. Be specific about what should change and what should remain unchanged.
-
----
 
 ## Interface Guide
 
@@ -159,8 +143,6 @@ The application will start and display a local URL (typically `http://127.0.0.1:
 | Element | Description |
 |---------|-------------|
 | Output Image | Displays the generated result in PNG format. Non-interactive display only. |
-
----
 
 ## Advanced Settings
 
@@ -183,8 +165,6 @@ extra digit, fewer digits, cropped, jpeg artifacts, signature, watermark, userna
 ```
 
 This negative prompt is not user-configurable through the interface.
-
----
 
 ## Editing Capabilities
 
@@ -214,8 +194,6 @@ The model supports a wide range of image editing operations through natural lang
 - Apply watermark-style overlays
 - Create framed compositions
 
----
-
 ## Multi-Image Editing
 
 The application supports uploading multiple images simultaneously. This enables reference-based editing where one image serves as the target and additional images provide reference material.
@@ -243,8 +221,6 @@ When writing prompts for multi-image edits, include explicit instructions about:
 - How the transferred elements should integrate (fabric texture, shadows, proportions)
 - Overall quality expectations (seamless, high-quality, realistic)
 
----
-
 ## Examples
 
 The application includes built-in examples demonstrating various editing capabilities:
@@ -263,8 +239,6 @@ The application includes built-in examples demonstrating various editing capabil
 |--------|--------|--------|
 | Person + Glasses | "Replace her glasses with the new glasses from image 1" | Swaps eyewear from reference |
 | Person + Clothing | "Replace the current clothing with the clothing from the reference image 2..." | Transfers outfit from reference image |
-
----
 
 ## Technical Details
 
@@ -312,8 +286,6 @@ The application implements aggressive memory management:
 5. Move the full pipeline to the CUDA device
 6. Launch the Gradio server with SSR mode disabled
 
----
-
 ## Configuration
 
 ### Environment Variables
@@ -344,8 +316,6 @@ The application uses a custom OrangeRedTheme extending Gradio's Soft theme:
 - **Primary font** -- Outfit (Google Fonts)
 - **Monospace font** -- IBM Plex Mono (Google Fonts)
 
----
-
 ## Troubleshooting
 
 ### Common Issues
@@ -367,8 +337,6 @@ The application logs the following at startup:
 - Active compute device (CUDA or CPU)
 - Flash Attention 3 processor status
 
----
-
 ## Limitations
 
 - **Fixed Negative Prompt** -- The negative prompt cannot be modified through the user interface.
@@ -379,19 +347,9 @@ The application logs the following at startup:
 - **Single Output** -- The pipeline generates one output image per request regardless of the number of input images.
 - **Experimental Status** -- The application is designated as experimental by the developers.
 
----
-
 ## License
 
 This project uses models and components from HuggingFace. Refer to the individual model repositories for their respective licenses:
 
 - [FireRedTeam/FireRed-Image-Edit-1.0](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0)
 - [prithivMLmods/Qwen-Image-Edit-Rapid-AIO-V19](https://huggingface.co/prithivMLmods/Qwen-Image-Edit-Rapid-AIO-V19)
-
----
-
-## Credits
-
-- **Base Model** -- [FireRedTeam](https://huggingface.co/FireRedTeam) for the FireRed-Image-Edit-1.0 pipeline
-- **Distilled Transformer** -- [prithivMLmods](https://huggingface.co/prithivMLmods) for the Qwen-Image-Edit-Rapid-AIO-V19 model
-- **Framework** -- Built with [Gradio](https://gradio.app) and [Diffusers](https://huggingface.co/docs/diffusers)
