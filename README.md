@@ -2,6 +2,16 @@
 
 A Gradio-based web application for performing image editing tasks using the FireRed-Image-Edit-1.0 model with accelerated 4-step inference. Supports single and multi-image editing through natural language prompts.
 
+## Overview
+
+FireRed-Image-Edit-1.0-Fast is an image editing application that leverages the FireRed-Image-Edit-1.0 pipeline with a distilled transformer model for fast inference. Users provide one or more input images along with a natural language prompt describing the desired edit, and the system generates the modified output image. The default configuration uses only 4 inference steps, enabling rapid editing while maintaining quality.
+
+---
+
+<img width="1618" height="891" alt="Screenshot 2026-02-28 at 10-09-26 FireRed Image Edit 1 0 Fast - a Hugging Face Space by prithivMLmods" src="https://github.com/user-attachments/assets/a0401fc1-c552-4dda-99a1-9d9ed632a427" />
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -20,11 +30,6 @@ A Gradio-based web application for performing image editing tasks using the Fire
 - [Troubleshooting](#troubleshooting)
 - [Limitations](#limitations)
 - [License](#license)
-- [Credits](#credits)
-
-## Overview
-
-FireRed-Image-Edit-1.0-Fast is an image editing application that leverages the FireRed-Image-Edit-1.0 pipeline with a distilled transformer model for fast inference. Users provide one or more input images along with a natural language prompt describing the desired edit, and the system generates the modified output image. The default configuration uses only 4 inference steps, enabling rapid editing while maintaining quality.
 
 ## Features
 
