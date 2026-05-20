@@ -44,6 +44,35 @@ To start the application and load the local server, run the main Python script:
 python app.py
 ```
 
+---
+
+### **Running with uv (Recommended)**
+
+[`uv`](https://github.com/astral-sh/uv) is a fast Python package manager that provides fully reproducible installs via a lock file.
+
+**Step 1 — Install uv**
+```bash
+curl -Ls https://astral.sh/uv/install.sh | sh
+```
+
+**Step 2 — Clone the repository**
+```bash
+git clone https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git
+cd FireRed-Image-Edit-1.0-Fast
+```
+
+**Step 3 — Initialize the project and install dependencies**
+```bash
+uv init
+uv add -r requirements.txt
+```
+This resolves all packages and generates a `uv.lock` file for reproducible installs.
+
+**Step 4 — Run the script**
+```bash
+uv run python app.py
+```
+
 Once the model weights are successfully loaded into your device's memory and the server starts, the terminal will provide a local URL (typically `http://127.0.0.1:7860`). Open this link in your web browser to interact with the visual interface.
 
 ## Project Structure
