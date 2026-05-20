@@ -73,6 +73,8 @@ This resolves all packages and generates a `uv.lock` file for reproducible insta
 uv run python app.py
 ```
 
+---
+
 Once the model weights are successfully loaded into your device's memory and the server starts, the terminal will provide a local URL (typically `http://127.0.0.1:7860`). Open this link in your web browser to interact with the visual interface.
 
 ## Project Structure
