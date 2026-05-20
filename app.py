@@ -236,20 +236,24 @@ footer{display:none!important}
     opacity:0.01;pointer-events:none;overflow:hidden;
 }
 
+/* ── App shell ── */
 .app-shell{
     background:#18181b;border:1px solid #27272a;border-radius:16px;
     margin:12px auto;max-width:1400px;overflow:hidden;
     box-shadow:0 25px 50px -12px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03);
 }
+
+/* ── Header ── */
 .app-header{
     background:linear-gradient(135deg,#18181b,#1e1e24);border-bottom:1px solid #27272a;
-    padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    padding:14px 24px;display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;
 }
 .app-header-left{display:flex;align-items:center;gap:12px}
 .app-logo{
     width:36px;height:36px;background:linear-gradient(135deg,#1E90FF,#47A3FF,#7CB8FF);
     border-radius:10px;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 12px rgba(30,144,255,.35);
+    box-shadow:0 4px 12px rgba(30,144,255,.35);flex-shrink:0;
 }
 .app-logo svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
 .app-title{
@@ -262,6 +266,31 @@ footer{display:none!important}
 }
 .app-badge.fast{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
 
+/* ── GitHub button ── */
+.gh-btn{
+    display:inline-flex!important;align-items:center!important;gap:7px!important;
+    padding:7px 16px!important;border-radius:8px!important;text-decoration:none!important;
+    font-family:'Inter',sans-serif!important;font-size:13px!important;font-weight:700!important;
+    letter-spacing:.1px!important;background:#1E90FF!important;
+    color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;
+    border:1px solid rgba(255,255,255,.18)!important;
+    box-shadow:0 2px 10px rgba(30,144,255,.45),0 1px 0 rgba(255,255,255,.1) inset!important;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease!important;
+    cursor:pointer!important;flex-shrink:0!important;
+}
+.gh-btn:hover{
+    background:#47A3FF!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;
+    transform:translateY(-1px)!important;
+    box-shadow:0 5px 18px rgba(30,144,255,.6),0 1px 0 rgba(255,255,255,.12) inset!important;
+}
+.gh-btn:active{
+    background:#1873CC!important;transform:translateY(0)!important;
+    box-shadow:0 1px 5px rgba(30,144,255,.35)!important;
+}
+.gh-btn svg{fill:#ffffff!important;flex-shrink:0;width:15px!important;height:15px!important}
+.gh-btn span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important}
+
+/* ── Toolbar ── */
 .app-toolbar{
     background:#18181b;border-bottom:1px solid #27272a;padding:8px 16px;
     display:flex;gap:4px;align-items:center;flex-wrap:wrap;
@@ -289,10 +318,12 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 .gradio-container .modern-tb-btn,.gradio-container .modern-tb-btn *{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important}
 .gradio-container .modern-tb-btn .tb-svg,.gradio-container .modern-tb-btn .tb-svg *{stroke:#ffffff!important}
 
+/* ── Main layout ── */
 .app-main-row{display:flex;gap:0;flex:1;overflow:hidden}
 .app-main-left{flex:1;display:flex;flex-direction:column;min-width:0;border-right:1px solid #27272a}
 .app-main-right{width:420px;display:flex;flex-direction:column;flex-shrink:0;background:#18181b}
 
+/* ── Drop zone ── */
 #gallery-drop-zone{position:relative;background:#09090b;min-height:440px;overflow:auto}
 #gallery-drop-zone.drag-over{outline:2px solid #1E90FF;outline-offset:-2px;background:rgba(30,144,255,.04)}
 
@@ -306,8 +337,9 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 .upload-click-area:active{background:rgba(30,144,255,.12);transform:scale(.98)}
 .upload-click-area svg{width:80px;height:80px}
 .upload-main-text{color:#71717a;font-size:14px;font-weight:500;margin-top:4px}
-.upload-sub-text{color:#52525b;font-size:12px}
+.upload-sub-text{color:#52525b;font-size:12px;text-align:center;max-width:280px;line-height:1.5}
 
+/* ── Gallery grid ── */
 .image-gallery-grid{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
     gap:12px;padding:16px;align-content:start;
@@ -339,6 +371,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 .gallery-add-card .add-icon{font-size:28px;color:#71717a;font-weight:300}
 .gallery-add-card .add-text{font-size:12px;color:#71717a;font-weight:500}
 
+/* ── Hint bar ── */
 .hint-bar{
     background:rgba(30,144,255,.06);border-top:1px solid #27272a;border-bottom:1px solid #27272a;
     padding:10px 20px;font-size:13px;color:#a1a1aa;line-height:1.7;
@@ -349,6 +382,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
     border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;
 }
 
+/* ── Suggestions ── */
 .suggestions-section{border-top:1px solid #27272a;padding:12px 16px}
 .suggestions-title,.examples-title{
     font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;
@@ -363,6 +397,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 }
 .suggestion-chip:hover{background:rgba(30,144,255,.15);border-color:rgba(30,144,255,.35);color:#47A3FF;transform:translateY(-1px)}
 
+/* ── Examples ── */
 .examples-section{border-top:1px solid #27272a;padding:12px 16px}
 .examples-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
 .examples-scroll::-webkit-scrollbar{height:6px}
@@ -391,6 +426,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
 }
 
+/* ── Right panel ── */
 .panel-card{border-bottom:1px solid #27272a}
 .panel-card-title{
     padding:12px 20px;font-size:12px;font-weight:600;color:#71717a;
@@ -410,6 +446,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 }
 @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
 
+/* ── Toast ── */
 .toast-notification{
     position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-120%);
     z-index:9999;padding:10px 24px;border-radius:10px;font-family:'Inter',sans-serif;
@@ -424,6 +461,7 @@ body:not(.dark) .modern-tb-btn .tb-svg,body:not(.dark) .modern-tb-btn .tb-svg *{
 .toast-notification .toast-icon{font-size:16px;line-height:1}
 .toast-notification .toast-text{line-height:1.3}
 
+/* ── Run button ── */
 .btn-run{
     display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
     background:linear-gradient(135deg,#1E90FF,#1873CC);border:none;border-radius:10px;
@@ -450,6 +488,7 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
 .gradio-container .btn-run,.gradio-container .btn-run *,.gradio-container #custom-run-btn,
 .gradio-container #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;fill:#ffffff!important}
 
+/* ── Output ── */
 .output-frame{border-bottom:1px solid #27272a;display:flex;flex-direction:column;position:relative}
 .output-frame .out-title{
     padding:10px 20px;font-size:13px;font-weight:700;color:#ffffff!important;
@@ -472,6 +511,7 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
 .out-download-btn.visible{display:inline-flex}
 .out-download-btn svg{width:12px;height:12px;fill:#7CB8FF}
 
+/* ── Loader ── */
 .modern-loader{
     display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(9,9,11,.92);
     z-index:15;flex-direction:column;align-items:center;justify-content:center;gap:16px;backdrop-filter:blur(4px);
@@ -490,6 +530,7 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
 }
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
+/* ── Settings ── */
 .settings-group{border:1px solid #27272a;border-radius:10px;margin:12px 16px;padding:0;overflow:hidden}
 .settings-group-title{
     font-size:12px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:.8px;
@@ -520,6 +561,7 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
 .checkbox-row input[type="checkbox"]{accent-color:#1E90FF;width:16px;height:16px;cursor:pointer}
 .checkbox-row label{color:#a1a1aa;font-size:13px;cursor:pointer}
 
+/* ── Status bar ── */
 .app-statusbar{
     background:#18181b;border-top:1px solid #27272a;padding:6px 20px;
     display:flex;gap:12px;height:34px;align-items:center;font-size:12px;
@@ -533,10 +575,16 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
     padding:3px 12px;background:rgba(30,144,255,.08);border-radius:6px;color:#47A3FF;font-weight:500;
 }
 
-.exp-note{padding:10px 20px;font-size:12px;color:#52525b;border-top:1px solid #27272a;text-align:center}
+/* ── Footer note ── */
+.exp-note{
+    padding:10px 20px;font-size:12px;color:#52525b;
+    border-top:1px solid #27272a;text-align:center;font-weight:500;
+    background:#18181b;font-family:'Inter',sans-serif;
+}
 .exp-note a{color:#47A3FF;text-decoration:none}
 .exp-note a:hover{text-decoration:underline}
 
+/* ── Dark overrides ── */
 .dark .app-shell{background:#18181b}
 .dark .upload-prompt-modern{background:transparent}
 .dark .panel-card{background:#18181b}
@@ -546,11 +594,13 @@ body:not(.dark) #custom-run-btn *{color:#ffffff!important;-webkit-text-fill-colo
 .dark .out-download-btn{color:#7CB8FF!important}
 .dark .out-download-btn:hover{color:#ffffff!important}
 
+/* ── Scrollbars ── */
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:#09090b}
 ::-webkit-scrollbar-thumb{background:#27272a;border-radius:4px}
 ::-webkit-scrollbar-thumb:hover{background:#3f3f46}
 
+/* ── Responsive ── */
 @media(max-width:840px){
     .app-main-row{flex-direction:column}
     .app-main-right{width:100%}
@@ -587,6 +637,28 @@ function init() {
     window.__uploadedImages = images;
     let selectedIdx = -1;
     let toastTimer = null;
+
+    /* ── GitHub button hover ── */
+    function enforceGhBtn() {
+        const ghBtn = document.querySelector('.gh-btn');
+        if (ghBtn && !ghBtn.__hoverBound) {
+            ghBtn.__hoverBound = true;
+            ghBtn.addEventListener('mouseenter', () => {
+                ghBtn.style.setProperty('background','#47A3FF','important');
+                ghBtn.style.setProperty('transform','translateY(-1px)','important');
+                ghBtn.style.setProperty('box-shadow','0 5px 18px rgba(30,144,255,.6)','important');
+            });
+            ghBtn.addEventListener('mouseleave', () => {
+                ghBtn.style.setProperty('background','#1E90FF','important');
+                ghBtn.style.setProperty('transform','translateY(0)','important');
+                ghBtn.style.setProperty('box-shadow','0 2px 10px rgba(30,144,255,.45)','important');
+            });
+            ghBtn.addEventListener('mousedown', () => ghBtn.style.setProperty('background','#1873CC','important'));
+            ghBtn.addEventListener('mouseup',   () => ghBtn.style.setProperty('background','#47A3FF','important'));
+        }
+    }
+    enforceGhBtn();
+    setInterval(enforceGhBtn, 1000);
 
     function showToast(message, type) {
         let toast = document.getElementById('app-toast');
@@ -758,10 +830,8 @@ function init() {
             document.querySelectorAll('.example-card.loading').forEach(c => c.classList.remove('loading'));
             card.classList.add('loading');
             showToast('Loading example...', 'info');
-
             setGradioValue('example-result-data', '');
             setGradioValue('example-idx-input', idx);
-
             setTimeout(() => {
                 const btn = document.getElementById('example-load-btn');
                 if (btn) {
@@ -769,7 +839,6 @@ function init() {
                     if (b) b.click(); else btn.click();
                 }
             }, 150);
-
             setTimeout(() => card.classList.remove('loading'), 12000);
         });
     });
@@ -877,7 +946,11 @@ function watchOutputs() {
         if (resultImg && resultImg.src) {
             if (outPh) outPh.style.display = 'none';
             let existing = outBody.querySelector('img.modern-out-img');
-            if (!existing) { existing = document.createElement('img'); existing.className = 'modern-out-img'; outBody.appendChild(existing); }
+            if (!existing) {
+                existing = document.createElement('img');
+                existing.className = 'modern-out-img';
+                outBody.appendChild(existing);
+            }
             if (existing.src !== resultImg.src) {
                 existing.src = resultImg.src;
                 if (dlBtn) dlBtn.classList.add('visible');
@@ -922,19 +995,16 @@ function watchExampleResults() {
             const data = JSON.parse(val);
             if (data.status === 'ok' && data.images && data.images.length > 0) {
                 lastProcessed = val;
-
                 if (window.__clearAll) window.__clearAll();
                 if (window.__setPrompt && data.prompt) window.__setPrompt(data.prompt);
-
                 data.images.forEach((b64, i) => {
                     if (b64 && window.__addImage) {
                         const name = (data.names && data.names[i]) ? data.names[i] : ('example_' + (i+1) + '.jpg');
                         window.__addImage(b64, name);
                     }
                 });
-
                 document.querySelectorAll('.example-card.loading').forEach(c => c.classList.remove('loading'));
-                if (window.__showToast) window.__showToast('Example loaded — ' + data.images.length + ' image(s)', 'info');
+                if (window.__showToast) window.__showToast('Example loaded \u2014 ' + data.images.length + ' image(s)', 'info');
             } else if (data.status === 'error') {
                 document.querySelectorAll('.example-card.loading').forEach(c => c.classList.remove('loading'));
                 if (window.__showToast) window.__showToast('Could not load example images', 'error');
@@ -952,6 +1022,7 @@ watchExampleResults();
 }
 """
 
+# ── SVG assets ─────────────────────────────────────────────────────────────────
 DOWNLOAD_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16l-5-5h3V4h4v7h3l-5 5z"/><path d="M20 18H4v2h16v-2z"/></svg>'
 
 UPLOAD_SVG = '<svg class="tb-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>'
@@ -960,8 +1031,11 @@ REMOVE_SVG = '<svg class="tb-svg" viewBox="0 0 24 24" fill="none" stroke="curren
 
 CLEAR_SVG = '<svg class="tb-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>'
 
+GITHUB_SVG = '<svg width="15" height="15" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>'
+
 FIRE_LOGO_SVG = '<svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 23c-3.6 0-8-2.69-8-7.5 0-3.5 3-6.5 4.5-8 .27-.27.75-.08.75.28v2.44c0 .42.5.63.72.28C12.28 7.5 13 3 13 1c0-.42.48-.64.8-.35C18 4.5 20 9 20 12c0 5.5-3.5 11-8 11z"/></svg>'
 
+# ── Gradio app ─────────────────────────────────────────────────────────────────
 with gr.Blocks() as demo:
 
     hidden_images_b64 = gr.Textbox(value="[]", elem_id="hidden-images-b64", elem_classes="hidden-input", container=False)
@@ -979,6 +1053,7 @@ with gr.Blocks() as demo:
     gr.HTML(f"""
     <div class="app-shell">
 
+        <!-- Header with GitHub top-right -->
         <div class="app-header">
             <div class="app-header-left">
                 <div class="app-logo">{FIRE_LOGO_SVG}</div>
@@ -986,8 +1061,14 @@ with gr.Blocks() as demo:
                 <span class="app-badge">v1.1</span>
                 <span class="app-badge fast">4-Step Fast</span>
             </div>
+            <a href="https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast"
+               target="_blank" class="gh-btn">
+                {GITHUB_SVG}
+                <span>GitHub</span>
+            </a>
         </div>
 
+        <!-- Toolbar -->
         <div class="app-toolbar">
             <button id="tb-upload" class="modern-tb-btn" title="Upload images">
                 {UPLOAD_SVG}<span class="tb-label">Upload</span>
@@ -1002,15 +1083,21 @@ with gr.Blocks() as demo:
             <span id="tb-image-count" class="tb-info">No images</span>
         </div>
 
+        <!-- Main row -->
         <div class="app-main-row">
+
+            <!-- Left panel -->
             <div class="app-main-left">
                 <div id="gallery-drop-zone">
                     <div id="upload-prompt" class="upload-prompt-modern">
                         <div id="upload-click-area" class="upload-click-area">
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="8" y="14" width="64" height="52" rx="6" fill="none" stroke="#1E90FF" stroke-width="2" stroke-dasharray="4 3"/>
-                                <polygon points="12,62 30,40 42,50 54,34 68,62" fill="rgba(30,144,255,0.15)" stroke="#1E90FF" stroke-width="1.5"/>
-                                <circle cx="28" cy="30" r="6" fill="rgba(30,144,255,0.2)" stroke="#1E90FF" stroke-width="1.5"/>
+                                <rect x="8" y="14" width="64" height="52" rx="6" fill="none"
+                                      stroke="#1E90FF" stroke-width="2" stroke-dasharray="4 3"/>
+                                <polygon points="12,62 30,40 42,50 54,34 68,62"
+                                         fill="rgba(30,144,255,0.15)" stroke="#1E90FF" stroke-width="1.5"/>
+                                <circle cx="28" cy="30" r="6"
+                                        fill="rgba(30,144,255,0.2)" stroke="#1E90FF" stroke-width="1.5"/>
                             </svg>
                             <span class="upload-main-text">Click or drag images here</span>
                             <span class="upload-sub-text">Supports multiple images for reference-based editing and guided manipulation</span>
@@ -1050,25 +1137,29 @@ with gr.Blocks() as demo:
                 </div>
 
                 <div class="examples-section">
-                    <div class="examples-title">Quick Examples</div>
+                    <div class="examples-title">Quick Examples &mdash; click to load</div>
                     <div class="examples-scroll">
                         {EXAMPLE_CARDS_HTML}
                     </div>
                 </div>
             </div>
 
+            <!-- Right panel -->
             <div class="app-main-right">
                 <div class="panel-card">
                     <div class="panel-card-title">Edit Instruction</div>
                     <div class="panel-card-body">
                         <label class="modern-label" for="custom-prompt-input">Prompt</label>
-                        <textarea id="custom-prompt-input" class="modern-textarea" rows="3" placeholder="e.g., transform into anime, upscale, change lighting..."></textarea>
+                        <textarea id="custom-prompt-input" class="modern-textarea" rows="3"
+                                  placeholder="e.g., transform into anime, upscale, change lighting..."></textarea>
                     </div>
                 </div>
 
                 <div style="padding:12px 20px;">
                     <button id="custom-run-btn" class="btn-run">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 23c-3.6 0-8-2.69-8-7.5 0-3.5 3-6.5 4.5-8 .27-.27.75-.08.75.28v2.44c0 .42.5.63.72.28C12.28 7.5 13 3 13 1c0-.42.48-.64.8-.35C18 4.5 20 9 20 12c0 5.5-3.5 11-8 11z"/></svg>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                            <path d="M12 23c-3.6 0-8-2.69-8-7.5 0-3.5 3-6.5 4.5-8 .27-.27.75-.08.75.28v2.44c0 .42.5.63.72.28C12.28 7.5 13 3 13 1c0-.42.48-.64.8-.35C18 4.5 20 9 20 12c0 5.5-3.5 11-8 11z" fill="white"/>
+                        </svg>
                         <span id="run-btn-label">Edit Image</span>
                     </button>
                 </div>
@@ -1117,16 +1208,19 @@ with gr.Blocks() as demo:
             </div>
         </div>
 
+        <!-- Footer: only model credit, no GitHub link -->
         <div class="exp-note">
-            Experimental Space for <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1" target="_blank">FireRed-Image-Edit-1.1</a>
-            &middot; Open on <a href="https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast" target="_blank">GitHub</a>
+            Experimental Space for
+            <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1" target="_blank">FireRed-Image-Edit-1.1</a>
         </div>
 
+        <!-- Status bar -->
         <div class="app-statusbar">
             <div class="sb-section" id="sb-image-count">No images uploaded</div>
             <div class="sb-section sb-fixed">Ready</div>
         </div>
-    </div>
+
+    </div><!-- /app-shell -->
     """)
 
     run_btn = gr.Button("Run", elem_id="gradio-run-btn")
