@@ -1,0 +1,27 @@
+[project]
+name = "firered-image-edit-1-0-fast"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "accelerate",
+    "av>=17.0.1",
+    "diffusers",
+    "gradio>=6.14.0",
+    "hf-xet>=1.5.0",
+    "huggingface-hub>=0.36.2",
+    "kernels>=0.12.3",
+    "numpy>=2.4.6",
+    "peft",
+    "sentencepiece>=0.2.1",
+    "spaces>=0.50.2",
+    "torch==2.11.0",
+    "torchvision>=0.26.0",
+    "transformers==4.57.3",
+]
+
+[tool.uv.sources]
+accelerate = { git = "https://github.com/huggingface/accelerate.git" }
+diffusers = { git = "https://github.com/huggingface/diffusers.git" }
+peft = { git = "https://github.com/huggingface/peft.git" }
