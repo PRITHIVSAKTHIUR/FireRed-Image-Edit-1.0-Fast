@@ -11,6 +11,12 @@ FireRed-Image-Edit-1.0-Fast is a high-performance, AI-driven image editing appli
 * **Custom Themed Interface:** Provides an interactive, user-friendly Gradio web interface styled with a custom Soft OrangeRed theme for an optimal visual layout.
 * **Hardware Acceleration:** Automatically identifies and leverages CUDA-compatible devices for optimal computational performance, rendering complex edits rapidly.
 
+## Prerequisites
+
+- Python 3.10 or higher.
+- CUDA-compatible GPU (recommended for bfloat16; falls back to CPU).
+- Stable internet for initial model/LoRA downloads.
+
 ## Installation
 
 ### 1. Clone the Repository
