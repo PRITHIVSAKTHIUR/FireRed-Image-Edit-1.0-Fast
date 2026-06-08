@@ -48,29 +48,27 @@ python app.py
 
 ### **Running with uv (Recommended)**
 
-[`uv`](https://github.com/astral-sh/uv) is a fast Python package manager that provides fully reproducible installs via a lock file.
+`uv` is an ultra-fast Python package installer and dependency resolver. It isolates execution contexts instantly and securely.
 
-**Step 1 — Install uv**
-```bash
-curl -Ls https://astral.sh/uv/install.sh | sh
-```
+**1. Install `uv`**
 
-**Step 2 — Clone the repository**
+* **Linux / macOS:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
+* **Windows (PowerShell):** `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+
+**2. Clone and Synchronize the Workspace**
+
 ```bash
 git clone https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git
 cd FireRed-Image-Edit-1.0-Fast
+uv sync
+
 ```
 
-**Step 3 — Initialize the project and install dependencies**
-```bash
-uv init
-uv add -r requirements.txt
-```
-This resolves all packages and generates a `uv.lock` file for reproducible installs.
+**3. Launch the Web Interface**
 
-**Step 4 — Run the script**
 ```bash
-uv run python app.py
+uv run app.py
+
 ```
 
 ---
