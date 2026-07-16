@@ -1,4 +1,4 @@
-# **FireRed-Image-Edit-1.0-Fast**
+# **[FireRed-Image-Edit-1.0-Fast](https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast)**
 
 FireRed-Image-Edit-1.0-Fast is an experimental, high-performance image manipulation workspace powered by the `FireRedTeam/FireRed-Image-Edit-1.1` pipeline. It utilizes a custom, optimized transformer (`prithivMLmods/Qwen-Image-Edit-Rapid-AIO-V19`) and incorporates Flash Attention 3 (`QwenDoubleStreamAttnProcessorFA3`) to achieve rapid, high-fidelity image edits.
 
