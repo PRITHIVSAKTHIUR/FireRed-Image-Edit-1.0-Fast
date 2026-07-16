@@ -1,107 +1,120 @@
-# **[FireRed-Image-Edit-1.0-Fast](https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast)**
+# **FireRed-Image-Edit-1.0-Fast**
 
-FireRed-Image-Edit-1.0-Fast is a high-performance, AI-driven image editing application that utilizes advanced diffusers and the QwenImageEditPlusPipeline for precise, prompt-based image modifications. Incorporating rapid Transformer configurations, the application provides an interactive Gradio web interface with a custom Soft Blue theme for an aesthetically pleasing user experience. Users can leverage powerful flow match euler discrete schedulers to seamlessly edit visual content by submitting an original image alongside descriptive textual instructions. The application operates entirely in Python, efficiently utilizing CUDA capabilities for accelerated machine learning computations, and serves as a fast, state-of-the-art solution for automated, text-guided image manipulation without complex manual editing software.
+FireRed-Image-Edit-1.0-Fast is an experimental, high-performance image manipulation workspace powered by the `FireRedTeam/FireRed-Image-Edit-1.1` pipeline. It utilizes a custom, optimized transformer (`prithivMLmods/Qwen-Image-Edit-Rapid-AIO-V19`) and incorporates Flash Attention 3 (`QwenDoubleStreamAttnProcessorFA3`) to achieve rapid, high-fidelity image edits.
+
+The application goes beyond simple text-to-image prompting by enabling multi-image reference uploads. This allows users to perform complex structural edits—such as seamless clothing swaps, lighting alterations, or face replacements—by passing multiple visual contexts to the model. The backend logic is wrapped in a highly customized, responsive Gradio interface with dynamic JavaScript asset handling, interactive galleries, and a sleek dark theme.
 
 <img width="1723" height="1590" alt="image" src="https://github.com/user-attachments/assets/645ec872-7279-4e20-8ea3-eb0cb9b3672a" />
 
-## Features
+### **Key Features**
 
-* **Advanced Diffusers Pipeline:** Utilizes the QwenImageEditPlusPipeline integrated with FlowMatchEulerDiscreteScheduler for high-fidelity image editing based on user prompts.
-* **Rapid AI Architecture:** Employs optimized transformer structures designed for fast inference, providing quick iterations and real-time responsiveness.
-* **Custom Themed Interface:** Provides an interactive, user-friendly Gradio web interface styled with a custom Soft OrangeRed theme for an optimal visual layout.
-* **Hardware Acceleration:** Automatically identifies and leverages CUDA-compatible devices for optimal computational performance, rendering complex edits rapidly.
+* **Reference-Based Editing:** Upload multiple images to act as context. The model can extract elements (like outfits or glasses) from a reference image and apply them seamlessly to a base image.
+* **Flash Attention 3 Integration:** Automatically hooks into `QwenDoubleStreamAttnProcessorFA3` to drastically reduce VRAM overhead and accelerate attention mechanism processing.
+* **Custom Headless-Style UI:** Abandons standard Gradio block layouts in favor of a bespoke, terminal-inspired dark theme featuring drag-and-drop zones, live toast notifications, and client-side JavaScript gallery management.
+* **Smart Dimension Snapping:** Automatically calculates aspect ratios from uploaded images and scales them to fit within a 1024x1024 bounding box, ensuring all dimensions snap to multiples of 8 to prevent tensor mismatch errors during diffusion.
+* **ZeroGPU Compatibility:** Optimized for transient hardware allocation using `spaces.GPU`, including aggressive garbage collection and CUDA cache clearing before and after inference cycles.
 
-## Prerequisites
+### **Repository Structure**
 
-- Python 3.10 or higher.
-- CUDA-compatible GPU (recommended for bfloat16; falls back to CPU).
-- Stable internet for initial model/LoRA downloads.
+```text
+├── examples/
+│   ├── 1.jpg
+│   ├── 10.jpg
+│   ├── 11.png
+│   ├── 2.jpg
+│   ├── 3.jpeg
+│   ├── 4.jpg
+│   ├── 5.jpg
+│   ├── 6.jpg
+│   ├── 7.webp
+│   ├── 8.jpg
+│   └── 9.png
+├── qwenimage/
+│   ├── __init__.py
+│   ├── pipeline_qwenimage_edit_plus.py
+│   ├── qwen_fa3_processor.py
+│   └── transformer_qwenimage.py
+├── app.py
+├── LICENSE.txt
+├── pre-requirements.txt
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+└── uv.lock
 
-## Installation
+```
 
-### 1. Clone the Repository
+### **Installation and Requirements**
+
+To run FireRed-Image-Edit-1.0-Fast locally, configure your environment with the specifications below. A modern CUDA-enabled GPU is required.
+
+* **Python Version:** Minimum Python **3.12** is needed, Python **3.14** is highly recommended.
+* **PyTorch Version:** `torch==2.11.0` or above is required for optimal compatibility and Flash Attention 3 support.
+
+#### **Running with `uv` (Recommended)**
+
+`uv` is an ultra-fast Python package and project manager written in Rust. It guarantees rapid virtual environment synchronization and reproducible execution paths based on the `uv.lock` file.
+
+**Step 1 — Install `uv`**
+
+* **macOS / Linux:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
+* **Windows:** `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+
+**Step 2 — Clone the repository**
 
 ```bash
 git clone https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git
 cd FireRed-Image-Edit-1.0-Fast
+
 ```
 
-### 2. Install Pre-requirements
-
-Certain system-level or structural dependencies must be configured before setting up the main python environment:
+**Step 3 — Initialize the project and install dependencies**
 
 ```bash
-pip install -r pre-requirements.txt
-```
-
-### 3. Install Standard Dependencies
-
-Install the core Python packages, which include critical modules like Diffusers, Accelerate, PEFT, and Gradio:
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to Run
-
-To start the application and load the local server, run the main Python script:
-
-```bash
-python app.py
-```
-
----
-
-### **Running with uv (Recommended)**
-
-`uv` is an ultra-fast Python package installer and dependency resolver. It isolates execution contexts instantly and securely.
-
-**1. Install `uv`**
-
-* **Linux / macOS:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
-* **Windows (PowerShell):** `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
-
-**2. Clone and Synchronize the Workspace**
-
-```bash
-git clone https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git
-cd FireRed-Image-Edit-1.0-Fast
 uv sync
 
 ```
 
-**3. Launch the Web Interface**
+**Step 4 — Run the script**
 
 ```bash
 uv run app.py
 
 ```
 
----
+#### **Standard PIP Installation**
 
-Once the model weights are successfully loaded into your device's memory and the server starts, the terminal will provide a local URL (typically `http://127.0.0.1:7860`). Open this link in your web browser to interact with the visual interface.
+**1. Update Package Manager**
+Ensure your local pip is up-to-date:
 
-## Project Structure
+```bash
+pip install pip>=26.1.2
 
-* `app.py`: The main entry point script containing the custom Gradio interface setup, pipeline initialization, and inference logic.
-* `qwenimage/`: Core directory housing the transformer and processor modules crucial for the underlying image manipulation techniques.
-* `requirements.txt`: The primary file listing Python library requirements needed to operate the application correctly.
-* `pre-requirements.txt`: A list containing earlier or auxiliary dependency specifications.
-* `examples/`: Directory dedicated to storing sample images and expected outputs to verify application functionality.
-* `LICENSE.txt`: The legal text detailing the licensing constraints and permissions.
+```
 
-## Workflow
+**2. Install Dependencies**
+Install the core deep learning stack, specific transformer builds, and Gradio framework versions from the requirements file.
 
-1. Navigate to the local server URL provided after executing the application.
-2. Upload a source image that you wish to edit into the input module.
-3. Provide a clear, detailed text prompt describing the exact modifications you want the AI to perform on the image.
-4. The system executes the QwenImageEditPlusPipeline via the underlying rapid transformers to compute the altered visual output.
-5. Retrieve and save the edited image directly from the interface.
+```bash
+pip install -r requirements.txt
 
-## License
+```
 
-This project is open-source. For detailed terms and conditions, refer to the included `LICENSE.txt` file within the repository.
+### **Usage**
 
-## Contributing
+Once the FastAPI web server initializes, open your browser to the local address provided in your terminal (typically `http://127.0.0.1:7860/`).
 
-Community contributions are encouraged. Please submit an issue for bug reports or create a Pull Request to propose features, optimize inference times, or improve the user interface.
+1. **Upload Images:** Click or drag images into the upload zone.
+* For style transfers or global edits (e.g., "Change to winter"), upload a single image.
+* For transfer edits (e.g., "Replace clothing using reference"), upload the base image first, followed by the reference image.
+
+
+2. **Set Prompt:** Type your edit instructions in the prompt box.
+3. **Advanced Settings (Optional):** Expand the settings panel to manually lock the generation seed, adjust the guidance scale, or modify inference steps.
+4. **Execute:** Click **Edit Image**. The frontend will display a loading overlay while the GPU processes the diffusion steps, subsequently returning the modified image.
+
+### **Links and Source**
+
+* **GitHub Repository:** [https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git](https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git)
+* **Hugging Face Live Demo:** [https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast](https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast)
+* **License:** [Apache License 2.0](https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast/blob/main/LICENSE.txt)
