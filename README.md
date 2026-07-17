@@ -4,7 +4,7 @@ FireRed-Image-Edit-1.0-Fast is an experimental, high-performance image manipulat
 
 The application goes beyond simple text-to-image prompting by enabling multi-image reference uploads. This allows users to perform complex structural edits—such as seamless clothing swaps, lighting alterations, or face replacements—by passing multiple visual contexts to the model. The backend logic is wrapped in a highly customized, responsive Gradio interface with dynamic JavaScript asset handling, interactive galleries, and a sleek dark theme.
 
-<img width="1723" height="1590" alt="image" src="https://github.com/user-attachments/assets/645ec872-7279-4e20-8ea3-eb0cb9b3672a" />
+<img width="1715" height="1589" alt="image (1)" src="https://github.com/user-attachments/assets/2e7f02a0-e339-41ea-b1a8-888fccd62f9a" />
 
 ### **Key Features**
 
