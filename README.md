@@ -62,8 +62,8 @@ To set up the FireRed-Image-Edit-1.0-Fast environment locally, configure your sy
 
 **Step 1 — Install `uv`**
 
-* **macOS / Linux:** `curl -LsSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | sh`
-* **Windows:** `powershell -c "irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex"`
+* **macOS / Linux:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
+* **Windows:** `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
 
 **Step 2 — Clone the repository**
 
@@ -125,7 +125,7 @@ kernels==0.16.0
 
 ### **Usage**
 
-Once the web deployment initializes, open your browser to the local address output in your terminal (typically `[http://127.0.0.1:7860/](http://127.0.0.1:7860/)`).
+Once the web deployment initializes, open your browser to the local address output in your terminal (typically `http://127.0.0.1:7860/`).
 
 1. **Upload Asset:** Drag and drop an image into the upload drop-zone (or click the preview window to replace the image).
 2. **Select Style / LoRA:** Choose your target editing task from the **Editing Style / LoRA** dropdown menu. The adapter weights will download lazily on first use.
