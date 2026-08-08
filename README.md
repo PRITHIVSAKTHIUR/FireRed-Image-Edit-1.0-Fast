@@ -128,3 +128,4 @@ Once the web server initializes, open your browser to the local address output i
 * **GitHub Repository:** [https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git](https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast.git)
 * **Hugging Face Live Space:** [https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast](https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast)
 * **License:** [Apache License 2.0](https://github.com/PRITHIVSAKTHIUR/FireRed-Image-Edit-1.0-Fast/blob/main/LICENSE.txt)
+* Thanks to **AK** (aka [akhaliq](https://huggingface.co/akhaliq)) for the initial [PR #27](https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast/discussions/27), customization, and motivation.
