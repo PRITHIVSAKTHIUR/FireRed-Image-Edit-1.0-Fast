@@ -4,6 +4,8 @@ FireRed-Image-Edit-1.0-Fast is an experimental, high-performance image editing a
 
 To ensure responsible usage, the pipeline incorporates an integrated NCII (Non-Consensual Intimate Imagery) safety guard model (`hfmlsoc/ncii-light-guard-v01`). The application is served via a single-page web app built with a FastAPI backend server (`gradio.Server`) and a dark red-themed frontend interface featuring a dual-view canvas, A/B comparison slider, history filmstrip, and interactive prompt suggestions.
 
+<img width="1919" height="927" alt="image (2)" src="https://github.com/user-attachments/assets/19d7d186-4f99-457b-a336-81b8f0ad28be" />
+
 ### **Key Features**
 
 * **NCII Safety Guard Integration:** Evaluates input prompts against a specialized classification guard model (`hfmlsoc/ncii-light-guard-v01`) to detect and block non-consensual intimate imagery requests before execution.
